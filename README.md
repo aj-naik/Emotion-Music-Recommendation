@@ -11,7 +11,7 @@ The a emotion recognition model is trained on FER 2013 dataset. It can detect 7 
 - Tkinter
 
 # Current condition:
-The gui is made with tkinter. Initialised seperate thread for webcam detection leading to better FPS during live detection
+The gui is made with tkinter. Initialised seperate thread for webcam detection leading to better FPS during live detection. Music recommendation doesn't work properly as of yet.
 
 Tkinter gui is only for prototyping, something made to test the app. Final version of app will NOT be in Tkinter. Rather it will be made with FLASK as served as web app. Flask app development is work in progress
 
