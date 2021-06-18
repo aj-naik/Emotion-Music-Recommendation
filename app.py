@@ -13,7 +13,7 @@ from keras.layers import MaxPooling2D
 from keras.preprocessing.image import ImageDataGenerator
 from pandastable import Table, TableModel
 from Spotipy import *
-from threading import Thread
+from utils import *
 import time
 
 emotion_model = Sequential()
@@ -42,34 +42,6 @@ global last_frame1
 last_frame1 = np.zeros((480, 640, 3), dtype=np.uint8)
 global cap1 
 show_text=[0]
-
-class WebcamVideoStream:
-    	
-		def __init__(self, src=0):
-			self.stream = cv2.VideoCapture(src,cv2.CAP_DSHOW)
-			(self.grabbed, self.frame) = self.stream.read()
-			self.stopped = False
-
-		def start(self):
-				# start the thread to read frames from the video stream
-			Thread(target=self.update, args=()).start()
-			return self
-			
-		def update(self):
-			# keep looping infinitely until the thread is stopped
-			while True:
-				# if the thread indicator variable is set, stop the thread
-				if self.stopped:
-					return
-				# otherwise, read the next frame from the stream
-				(self.grabbed, self.frame) = self.stream.read()
-
-		def read(self):
-			# return the frame most recently read
-			return self.frame
-		def stop(self):
-			# indicate that the thread should be stopped
-			self.stopped = True
 
 def web_cam(): 
     global cap1     
@@ -101,16 +73,6 @@ def web_cam():
        exit()
        
 def music_rec():
-    # frame2=cv2.imread(music_dist[show_text[0]])
-    # pic2=cv2.cvtColor(frame2,cv2.COLOR_BGR2RGB)
-    # img2=Image.fromarray(frame2)
-    # imgtk2=ImageTk.PhotoImage(image=img2)
-    # lmain2.imgtk2=imgtk2
-    # lmain3.configure(text=emotion_dict[show_text[0]],font=('arial',45,'bold'))
-    
-    # lmain2.configure(image=imgtk2)
-    # lmain2.after(10, music_rec)
-
     track_ids = getTrackIDs('spotify',music_dist[show_text[0]])
     track_list = []
     for i in range(len(track_ids)):
