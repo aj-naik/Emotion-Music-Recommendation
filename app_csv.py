@@ -8,6 +8,7 @@ import tensorflow as tf
 from tensorflow.keras import layers
 from tensorflow import keras
 from pandastable import Table, TableModel
+from threading import Thread
 from Spotipy import *
 
 emotion_model = keras.Sequential(
@@ -44,12 +45,38 @@ last_frame1 = np.zeros((480, 640, 3), dtype=np.uint8)
 global cap1 
 show_text=[0]
 
+class WebcamVideoStream:
+    	
+		def __init__(self, src=0):
+			self.stream = cv2.VideoCapture(src,cv2.CAP_DSHOW)
+			(self.grabbed, self.frame) = self.stream.read()
+			self.stopped = False
+
+		def start(self):
+				# start the thread to read frames from the video stream
+			Thread(target=self.update, args=()).start()
+			return self
+			
+		def update(self):
+			# keep looping infinitely until the thread is stopped
+			while True:
+				# if the thread indicator variable is set, stop the thread
+				if self.stopped:
+					return
+				# otherwise, read the next frame from the stream
+				(self.grabbed, self.frame) = self.stream.read()
+
+		def read(self):
+			# return the frame most recently read
+			return self.frame
+		def stop(self):
+			# indicate that the thread should be stopped
+			self.stopped = True
+
 def web_cam(): 
     global cap1     
-    cap1 = cv2.VideoCapture(0)                                 
-    if not cap1.isOpened():                             
-        print("Cant open the camera")
-    flag1, frame1 = cap1.read()
+    cap1 = WebcamVideoStream(src=0).start()                                
+    frame1 = cap1.read()
     frame1 = cv2.resize(frame1,(600,500))
     bounding_box = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
     gray_frame = cv2.cvtColor(frame1, cv2.COLOR_BGR2GRAY)
@@ -63,17 +90,15 @@ def web_cam():
         maxindex = int(np.argmax(prediction))
         cv2.putText(frame1, emotion_dict[maxindex], (x+20, y-60), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
         show_text[0]=maxindex
-    if flag1 is None:
-        print ("Major error!")
-    elif flag1:
-        global last_frame1
-        last_frame1 = frame1.copy()
-        pic = cv2.cvtColor(last_frame1, cv2.COLOR_BGR2RGB)     
-        img = Image.fromarray(pic)
-        imgtk = ImageTk.PhotoImage(image=img)
-        lmain.imgtk = imgtk
-        lmain.configure(image=imgtk)
-        lmain.after(10, web_cam)
+
+    global last_frame1
+    last_frame1 = frame1.copy()
+    pic = cv2.cvtColor(last_frame1, cv2.COLOR_BGR2RGB)     
+    img = Image.fromarray(pic)
+    imgtk = ImageTk.PhotoImage(image=img)
+    lmain.imgtk = imgtk
+    lmain.configure(image=imgtk)
+    lmain.after(10, web_cam)
     if cv2.waitKey(1) & 0xFF == ord('q'):
        exit()
        
