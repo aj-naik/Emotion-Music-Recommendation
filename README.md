@@ -11,8 +11,7 @@ The a emotion recognition model is trained on FER 2013 dataset. It can detect 7 
 - Tkinter
 
 # Current condition:
-The gui is made with tkinter. Entire project uses a single thread for image capturing, processing and for getting prediction which leads to a very very slow performance. A single frame takes anywhere from 10-30s to be processed through the model. This causes a huge drop in FPS. Currentlly working on multi threading. 1 thread will be for frame capturing and processing and other will be for getting prediction.
-Hopefully this approach will lead to better FPS and make the project usable.
+The gui is made with tkinter. Initialised seperate thread for webcam detection leading to better FPS during live detection
 
 Tkinter gui is only for prototyping, something made to test the app. Final version of app will NOT be in Tkinter. Rather it will be made with FLASK as served as web app. Flask app development is work in progress
 
