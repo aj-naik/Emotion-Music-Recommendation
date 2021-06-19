@@ -75,6 +75,7 @@ def web_cam():
        exit()
        
 def music_rec():
+    print('---------------- Value ------------', music_dist[show_text[0]])
     df = pd.read_csv(music_dist[show_text[0]])
     f = Frame(root)
     f.place(x=1000,y=600)
