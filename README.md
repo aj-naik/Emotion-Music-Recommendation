@@ -9,6 +9,7 @@ The a emotion recognition model is trained on FER 2013 dataset. It can detect 7 
 - Tensorflow
 - Spotipy
 - Tkinter
+- Flask
 
 # Current condition:
 The gui is made with tkinter. Initialised seperate thread for webcam detection leading to better FPS during live detection. Music recommendation doesn't work properly as of yet.
