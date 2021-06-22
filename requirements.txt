@@ -1,9 +1,0 @@
-Keras==2.4.3
-spotipy==2.18.0
-opencv_python_headless==4.5.1.48
-Flask==1.1.2
-pandastable==0.12.2.post1
-numpy
-pandas==1.2.0
-Pillow==8.2.0
-tensorflow==2.5.0
