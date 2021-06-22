@@ -51,9 +51,10 @@
         
         margin: 10px;
         text-align: center;
+        width: 51%%;
       "> 
     
-      <img class ="outer-shadow" id="bg" class="center" src="{{ url_for('video_feed') }}" />
+      <img class ="outer-shadow" id="bg" class="center img-fluid" src="{{ url_for('video_feed') }}" />
   
     </div>
     </div>
@@ -73,7 +74,7 @@
 
     <div class ="outer-shadow" id="ResultArea" style="
         padding: 15px;
-        width: 50%;
+        width: 49%;
         float: left;
         height: 100%%;
         margin: auto;
@@ -98,7 +99,7 @@
       //Clear result div
       $("#ResultArea").html("");
       //Crate table html tag
-      var table = $("<table class = 'table table-striped table-light' id=DynamicTable></table>").appendTo("#ResultArea");
+      var table = $("<table class = 'table table-striped table-light table-bordered table-hover table-sm table-responsive' id=DynamicTable></table>").appendTo("#ResultArea");
       //Create table header row
       var rowHeader = 
       $("<tr></tr>").appendTo(table);
@@ -109,7 +110,8 @@
       $.each(data, function (i, value) {
 
           //Create new row for each record
-          var row = $("<tr></tr>").appendTo(table);
+          var row = 
+          $("<tr></tr>").appendTo(table);
           $("<td></td>").text(value.Name).appendTo(row);
           $("<td></td>").text(value.Album).appendTo(row);
           $("<td></td>").text(value.Artist).appendTo(row);
