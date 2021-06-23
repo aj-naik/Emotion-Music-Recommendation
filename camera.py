@@ -43,6 +43,7 @@ global cap1
 show_text=[0]
 
 
+''' Class for calculating FPS while streaming. Used this to check performance of using another thread for video streaming '''
 class FPS:
 	def __init__(self):
 		# store the start time, end time, and total number of frames
@@ -69,6 +70,8 @@ class FPS:
 		# compute the (approximate) frames per second
 		return self._numFrames / self.elapsed()
 
+
+''' Class for using another thread for video streaming to boost performance '''
 class WebcamVideoStream:
     	
 		def __init__(self, src=0):
@@ -97,10 +100,8 @@ class WebcamVideoStream:
 			# indicate that the thread should be stopped
 			self.stopped = True
 
+''' Class for reading video stream, generating prediction and recommendations '''
 class VideoCamera(object):
-	
-	# def __del__(self):
-	# 	self.video.release()
 	
 	def get_frame(self):
 		global cap1
