@@ -11,7 +11,7 @@ from pandastable import Table, TableModel
 from tensorflow.keras.preprocessing import image
 import datetime
 from threading import Thread
-# from Spotipy import *
+from Spotipy import *
 import time
 import pandas as pd
 face_cascade=cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
