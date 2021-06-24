@@ -2,6 +2,7 @@
 
 <head>
   <title>Emotion Music Recommendation</title>
+
   <style>
     img {
       padding: 20px;
@@ -10,6 +11,7 @@
       width: 85%;
     }
   </style>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css2?family=Bigelow+Rules&display=swap" rel="stylesheet">
@@ -26,14 +28,20 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #eff0f4">
+
   <div id="body">
+
     <div>
+
       <h1 align="center" style="
-      font-family: 'Bigelow Rules';
-      font-size: 72px;
-      color: #0ccac4;">
-      Mood Music Recommender</h1>
+        font-family: 'Bigelow Rules';
+        font-size: 72px;
+        color: #0ccac4;">
+        Mood Music Recommender
+      </h1>
+
     </div>
+
     <div style="
         width: 50%;
         float: left;
@@ -43,12 +51,14 @@
         padding-bottom:25px;
         text-align: center;
       ">
+
     <h2 align="center" style="
       font-family: 'Bigelow Rules';
       font-size: 36px;
-      color: #0ccac4;">Emotion Detector</h2>
+      color: #0ccac4;">Emotion Detector
+    </h2>
+
     <div style="
-        
         margin: 10px;
         text-align: center;
         width: 51%%;
@@ -57,20 +67,24 @@
       <img class ="outer-shadow" id="bg" class="center img-fluid" src="{{ url_for('video_feed') }}" />
   
     </div>
+
     </div>
     
     <div style="
         width: 50%;
         float: left;
         height: 100%%;
-        
         margin: auto;
         text-align: center;
       ">
-    <h2 align="center" style="
-      font-family: 'Bigelow Rules';
-      font-size: 36px;
-      color: #0ccac4;">Song Recommendations</h2></div>
+
+        <h2 align="center" style="
+          font-family: 'Bigelow Rules';
+          font-size: 36px;
+          color: #0ccac4;">Song Recommendations
+        </h2>
+      
+     </div>
 
     <div class ="outer-shadow" id="ResultArea" style="
         padding: 15px;
@@ -82,10 +96,14 @@
         margin-bottom:15px;
       ">
     </div>
+
   </div>
+
 </body>
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type=text/javascript>
+
 // Constantly Update Table
     setInterval(function() {
         $.getJSON('/t', function(data) {
