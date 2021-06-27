@@ -46,7 +46,7 @@ The app in current state can't be deployed on web as:
 - Opencv tries to open the camera on whatever device the app is running on. Code in current state makes use of webcam if available on server side not client side. So when app is run locally on a laptop Video Streaming through webcam is possible. But if it's deployed to a cloud, the app is stored in a data center somewhere which obviously doesn't have web camera connected to it and hence it doesn't work.
 
 # Futher Work:
-- Instead of CSVs, create a databse and connect it to application. The DB will fetch songs for recommendations and new songs can be updated dirctly onto database
+- Instead of CSVs, create a databse and connect it to application. The DB will fetch songs for recommendations and new songs can be updated directly onto database
 - Add a feature which will update specified playlists for better and more recent recommendations, a specific day over a fixed duration say every sunday and append it to database
 - Directly play the song or redirect to the song on Spotify when user clicks on it.
 - Rewrite code such that Video Streaming is done on client side instead of server side so as it make the app deployable
