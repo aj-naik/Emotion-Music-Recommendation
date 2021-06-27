@@ -30,6 +30,7 @@ The entire project works perfectly fine. Live detection gives good frame rates d
 - camera.py is the module for video streaming, frame capturing, prediction and recommendation which are passed to main.py
 - main.py is the main flask application file.
 - index.html in 'templates' directory is the web page for the application. Basic HTML and CSS.
+- utila.py is an utility module for video streaming of web camera with threads to enable real time detection.
 
 # Running the app:
 Flask: 
