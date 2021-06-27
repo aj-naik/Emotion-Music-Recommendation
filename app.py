@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 headings = ("Name","Album","Artist")
 df1 = music_rec()
+df1 = df1.head(15)
 @app.route('/')
 def index():
     print(df1.to_json(orient='records'))
