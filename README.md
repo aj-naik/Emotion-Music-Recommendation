@@ -22,7 +22,7 @@ The dataset used for this project is the famous FER2013 dataset. Models trained 
 Note that the dataset is highly imbalanced with happy class having maxiumum representation. This might be a factor resulting in okaysish accuracy after training.
 
 # Model Architecture:
-- The model architecture is a sequential model consisting of Conv2d, Maxpool2d, Dropout and Dense layers.
+- The model architecture is a sequential model consisting of Conv2d, Maxpool2d, Dropout and Dense layers:
 1. Conv2D layers throughout the model have different filter size from 32 to 128, all with activation 'relu'
 2. Pooling layers have pool size (2,2)
 3. Dropout is set to 0.25 as anything above results in poor performance
