@@ -1,6 +1,4 @@
 import numpy as np
-import pandas as pd 
-import cv2
 
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
