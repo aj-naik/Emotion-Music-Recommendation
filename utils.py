@@ -1,3 +1,4 @@
+''' Class for using separate thread for video streaming through web camera'''
 import cv2
 from threading import Thread
 class WebcamVideoStream:
