@@ -9,6 +9,11 @@ Recommending music based on your facial expressions using FER 2013 dataset and S
 # Project Description:
 The emotion recognition model is trained on FER 2013 dataset. It can detect 7 emotions. The project works by getting live video feed from web cam, pass it through the model to get a prediction of emotion. Then according to the emotion predicted, the app will fetch playlist of songs from Spotify through spotipy wrapper and recommend the songs by displaying them on the screen.
 
+# Features:
+- Real time expression detection and song recommendations.
+- Playlists fetched from Spotify using API.
+- Neumorphism UI for website.
+
 # Tech Stack:
 - Keras
 - Tensorflow
@@ -37,11 +42,6 @@ Note:- Tried Implementing various other models like VGG16 but accuracy was far t
 
 # Current condition:
 The entire project works perfectly fine. Live detection gives good frame rates due to multithreading.
-
-# Features:
-- Real time expression detection and song recommendations.
-- Playlists fetched from Spotify using API.
-- Neumorphism UI for website.
 
 # Project Components:
 - Spotipy is a module for establishing connection to and getting tracks from Spotify using Spotipy wrapper.
