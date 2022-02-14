@@ -1,4 +1,4 @@
-Flask==2.0.2
+Flask==2.0.3
 spotipy==2.19.0
 pandas==1.4.0
 gunicorn==20.1.0
