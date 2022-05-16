@@ -5,4 +5,4 @@ gunicorn==20.1.0
 opencv_python_headless==4.5.5.64
 numpy==1.22.3
 Pillow==9.1.0
-tensorflow==2.8.0
+tensorflow==2.9.0
