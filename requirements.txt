@@ -1,6 +1,6 @@
 Flask==2.2.2
 spotipy==2.20.0
-pandas==1.5.0
+pandas==1.5.1
 gunicorn==20.1.0
 opencv_python_headless==4.6.0.66
 numpy==1.23.4
